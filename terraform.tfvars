@@ -30,4 +30,10 @@ amis = {
   "us-east-1" = "ami-05ffe3c48a9991133"
   "us-east-2" = "ami-0c803b171269e2d72"
 }
+
+#RDS
 instance_type = "t3.micro"
+db_name           = "myappdb"
+db_username       = "admin"
+db_password       = "MySecureP@ss123"
+db_instance_class = "db.t3.micro"

@@ -157,15 +157,15 @@ module "s3" {
 
 # RDS
 module "rds" {
-  source                = "./rds"
-  db_name               = "myappdb"
-  username              = "admin"
-  password              = "MySecureP@ss123"
-  instance_class        = "db.t3.micro"
-  vpc_security_group_ids = [module.security_groups_primary.db_sg_id]
-  subnet_ids            = module.networking_primary.private_subnet_ids
-  region_east1          = var.region_east1
-  region_east2          = var.region_east2
+  source                  = "./rds"
+  db_name                 = var.db_name
+  username                = var.db_username
+  password                = var.db_password
+  instance_class          = var.db_instance_class
+  vpc_security_group_ids  = [module.security_groups_primary.db_sg_id]
+  subnet_ids              = module.networking_primary.private_subnet_ids
+  region_east1            = var.region_east1
+  region_east2            = var.region_east2
 
   providers = {
     aws.east1 = aws.east1
